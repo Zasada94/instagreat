@@ -1,15 +1,7 @@
-import { View, Text } from "react-native";
+import * as React from "react";
+import SignedInStack from "./navigation";
+import 'react-native-gesture-handler';
 
 export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
-  );
+	return <SignedInStack />;
 }
