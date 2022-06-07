@@ -1,5 +1,8 @@
 // Import the functions you need from the SDKs you need
-import firebase from 'firebase'
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/messaging";
+import "firebase/compat/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,8 +17,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-!firebaseConfig.apps.length
-	? firebase.initializeApp(firebaseConfig)
-	: firebase.app();
+!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
-    export default firebase
+export default firebase;
