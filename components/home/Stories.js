@@ -7,11 +7,11 @@ const Stories = () => {
 		<View style={{ marginBottom: 13 }}>
 			<ScrollView horizontal showsHorizontalScrooIndicator={false}>
 				{USERS.map((story, index) => (
-					<View key={index} style={{alignItems: 'center'}}>
+					<View key={index} style={{ alignItems: "center" }}>
 						<Image source={{ uri: story.image }} style={styles.story} />
 						<Text style={{ color: "white" }}>
 							{story.user.length > 11
-								? story.user.slice(0, 10).toLowerCase() + "..."
+								? story.user.slice(0, 6).toLowerCase() + "..."
 								: story.user.toLowerCase()}
 						</Text>
 					</View>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 		width: 70,
 		height: 70,
 		borderRadius: 50,
-		marginLeft: 6,
+		marginHorizontal: 7,
 		borderWidth: 3,
 		borderColor: "#ff8501",
 	},

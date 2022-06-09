@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
-import React, { useEffect } from "react";
+import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import React, { useEffect, useState } from "react";
 import Header from "../components/home/Header";
 import Stories from "../components/home/Stories";
 import Post from "../components/home/Post";
@@ -9,10 +9,15 @@ import { BOTTOMICONS } from "../data/icons";
 import { db } from "../firebase";
 
 const HomeScreen = ({ navigation }) => {
+	const [posts, setPosts] = useState([]);
 	useEffect(() => {
-		db.collectionGroup("posts").onSnapshot((snapshot) => {
-			console.log(snapshot.docs.map((doc) => doc.data()));
-		});
+		db.collectionGroup("posts")
+			.orderBy("createdAt", "desc")
+			.onSnapshot((snapshot) => {
+				setPosts(
+					snapshot.docs.map((post) => ({ id: post.id, ...post.data() }))
+				);
+			});
 	}, []);
 
 	return (
@@ -20,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
 			<Header navigation={navigation} />
 			<Stories />
 			<ScrollView>
-				{POSTS.map((post, index) => (
+				{posts.map((post, index) => (
 					<Post post={post} key={index} />
 				))}
 			</ScrollView>
