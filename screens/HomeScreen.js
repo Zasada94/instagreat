@@ -29,7 +29,7 @@ const HomeScreen = ({ navigation }) => {
 					<Post post={post} key={index} />
 				))}
 			</ScrollView>
-			<BottomTabs icons={BOTTOMICONS} />
+			<BottomTabs icons={BOTTOMICONS} navigation={navigation} />
 		</SafeAreaView>
 	);
 };
