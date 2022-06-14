@@ -12,7 +12,7 @@
 - Funcionalities: Logging in and signing in on web database. Adding posts to database and rendering them. Getting random profile pictures from API. Liking posts. Search photos screen. 
 
 ## Screenshots
-![Screenshot01](./screenshots/Screenshot01.PNG)  
-![Screenshot02](./screenshots/Screenshot02.PNG)  
-![Screenshot03](./screenshots/Screenshot03.PNG)  
+![Screenshot01](./screenshots/screenshot01.PNG)  
+![Screenshot02](./screenshots/screenshot02.PNG)  
+![Screenshot03](./screenshots/screenshot03.PNG)  
 
